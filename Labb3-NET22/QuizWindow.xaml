@@ -1,0 +1,168 @@
+﻿<Window x:Class="Labb3_NET22.QuizWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Labb3_NET22"
+        mc:Ignorable="d"
+        Title="QuizWindow" Height="650" Width="720">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width = "20" />
+            <ColumnDefinition Width="175"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="5"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="170"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="auto"/> 
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
+        <Image 
+            x:Name="ImageQuestion" 
+            Grid.Column="1" 
+            Grid.ColumnSpan="9" 
+            Grid.Row="1" 
+            Grid.RowSpan="2" 
+            HorizontalAlignment="Center"
+            Source="/Images/CatWithShades.jpg" 
+            Width="300"
+            Height="250"/>
+
+        <WrapPanel
+            Grid.Column="4"
+            Grid.ColumnSpan="2"
+            Grid.Row="3"
+            Grid.RowSpan="2"
+            Orientation="Vertical" HorizontalAlignment="Center" Width="188" >
+
+            <TextBlock x:Name="LabelQuestion" HorizontalAlignment="Center" FontWeight="Bold" TextWrapping="Wrap" Width="188" Height="auto" Text="Which gas do plants absorb from the atmosphere during photosynthesis?"/>
+
+        </WrapPanel>
+        <Label 
+                x:Name="LabelOptionA"
+                Content="Option A Text"
+            HorizontalAlignment="Left"
+            Grid.Column="4"
+                Grid.ColumnSpan="3"
+                Grid.Row="6" Grid.RowSpan="2" />
+        <Label 
+                x:Name="LabelOptionB"
+                Content="Option B Text"
+                HorizontalAlignment="Left"
+                Grid.Column="4"
+                Grid.ColumnSpan="3"
+                Grid.Row="8"/>
+        <Label 
+                x:Name="LabelOptionC"
+                Content="Option C Text"
+                HorizontalAlignment="Left"
+                Grid.Column="4"
+                Grid.ColumnSpan="3"
+                Grid.Row="10"/>
+        <Label 
+                x:Name="LabelOptionD"
+                Content="Option D Text"
+            HorizontalAlignment="Left"
+                Grid.Column="4"
+                Grid.ColumnSpan="3"
+                Grid.Row="12"/>
+        <Button 
+            x:Name="ButtonOptionA" 
+            Grid.Column="2" 
+            Grid.Row="6" 
+            Content="1" Click="OptionA_Click"
+            Height="25"
+            Width="70"/>
+        <Button 
+            x:Name="ButtonOptionB" 
+            Grid.Column="2" 
+            Grid.Row="8" 
+            Content="2" Click="OptionB_Click"
+            Height="25"
+            Width="70"/>
+        <Button 
+            x:Name="ButtonOptionC" 
+            Grid.Column="2" 
+            Grid.Row="10" 
+            Content="3" Click="OptionC_Click" 
+            Height="25"
+            Width="70"/>
+        <Button 
+            x:Name="ButtonOptionD" 
+            Grid.Column="2" 
+            Grid.Row="12" 
+            Content="4" Click="OptionD_Click"
+            Height="25"
+            Width="70"/>
+        <Button
+            x:Name="ButtonSubmit"
+            Grid.Column="1"
+            Grid.ColumnSpan="9"
+            Grid.Row="14"
+            HorizontalAlignment="Center"
+            Content="Submit Your Answer" Click="SubmitButton_Click" Visibility="Hidden"/>
+        <Button
+            x:Name="ButtonNextQuestion"
+            Grid.Column="1"
+            Grid.ColumnSpan="9"
+            Grid.Row="18"
+            HorizontalAlignment="Center"
+            Content="Next Question" Click="ButtonNextQuestion_Click" />
+        <Button 
+            x:Name="ButtonBack" 
+            Grid.Column="1" 
+            Grid.ColumnSpan="9" 
+            Grid.Row="20" 
+            Content="Back" 
+            HorizontalAlignment="Center" 
+            Width="50" 
+            Click="ButtonBack_Click" />
+  
+        
+        <ProgressBar 
+            x:Name="ProgressBarAmountOfQuestions"
+            Grid.Row="16" 
+            Grid.Column="4" 
+            Grid.ColumnSpan="2" 
+            Height="20" />
+
+        <Label
+            x:Name="LabelProcentageCorrectAnswers"
+            Grid.Row="16"
+            Grid.Column="2"
+            Content="0/10"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            />
+    </Grid>
+</Window>
