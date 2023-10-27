@@ -11,7 +11,7 @@ namespace Labb3_NET22.DataModels
 {
     class JSON_Function
     {
-        public static void GenerateDataFolder()
+        public static async void GenerateDataFolder()
         {
             string folderPath = FolderPath();
             try
@@ -23,7 +23,7 @@ namespace Labb3_NET22.DataModels
                     Directory.CreateDirectory(folderPath); 
                     MessageBox.Show("Folder Created");
 
-                    SaveJSONList(gQ.allQuestions);
+                   await SaveJSONList(gQ.allQuestions);
                 }
             }
             catch (Exception)
@@ -32,11 +32,13 @@ namespace Labb3_NET22.DataModels
             }
         }
 
-        public static void SaveJSONList(List<Question> questions)
+        public static Task SaveJSONList(List<Question> questions)
         {
             var Json = JsonConvert.SerializeObject(questions, Formatting.Indented);
 
             File.WriteAllText(FullPath(), Json);
+
+            return Task.CompletedTask;
         }
 
         public static IEnumerable<Question> LoadJSONList()

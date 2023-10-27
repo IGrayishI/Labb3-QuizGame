@@ -130,7 +130,7 @@
             Grid.ColumnSpan="9"
             Grid.Row="14"
             HorizontalAlignment="Center"
-            Content="Submit Your Answer" Click="SubmitButton_Click" Visibility="Hidden"/>
+            Content="Submit Your Answer" Visibility="Hidden"/>
         <Button
             x:Name="ButtonNextQuestion"
             Grid.Column="1"
@@ -157,12 +157,20 @@
             Height="20" />
 
         <Label
-            x:Name="LabelProcentageCorrectAnswers"
+            x:Name="LabelQuestionNumeral"
             Grid.Row="16"
             Grid.Column="2"
             Content="0/10"
             VerticalAlignment="Center"
             HorizontalAlignment="Center"
+            />
+        <Label
+            x:Name="LabelProcentageCorrect"
+            Grid.Row="16"
+            Grid.Column="6"
+            Content="0/10"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Left"
             />
     </Grid>
 </Window>

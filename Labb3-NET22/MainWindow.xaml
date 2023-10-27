@@ -6,12 +6,13 @@
         xmlns:local="clr-namespace:Labb3_NET22"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="720">
-    <Grid>
-        
+
+    <Grid Background="LightGray">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="130"/>
+            <ColumnDefinition Width="130"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
@@ -37,33 +38,135 @@
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
 
-        <Button x:Name ="StartQuiz" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="4" Content="Start Quiz" Width="90" Height="40" Click="StartQuiz_Click"/>
-        <Button x:Name="EditQuiz" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="6" Content="Edit Quiz" Width="90" Height="40" Click="EditQuiz_Click" />
-        <Button x:Name="QuitQuiz" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="8" Content="Quit" Width="90" Height="40" Click="QuitQuiz_Click" />
-        <Label Content="Welcome to the Super Simple Quiz!" FontWeight="ExtraBold" FontSize="20" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="2" HorizontalAlignment="Center" />
-        
-        <Label Content="Choose your catagories" FontWeight="Bold" FontSize="19" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="4" />
+        <Button 
+            x:Name ="StartQuiz" 
+            Grid.Column="1" 
+            Grid.ColumnSpan="6" 
+            Grid.Row="4" 
+            Content="Start Quiz" 
+            Width="90" 
+            Height="40" 
+            Click="StartQuiz_Click"/>
+        <Button 
+            x:Name="EditQuiz" 
+            Grid.Column="1" 
+            Grid.ColumnSpan="6" 
+            Grid.Row="6" 
+            Content="Edit Quiz" 
+            Width="90" 
+            Height="40" 
+            Click="EditQuiz_Click" />
+        <Button 
+            x:Name="QuitQuiz" 
+            Grid.Column="1" 
+            Grid.ColumnSpan="6" 
+            Grid.Row="8" 
+            Content="Quit" 
+            Width="90" 
+            Height="40" 
+            Click="QuitQuiz_Click" />
+        <Label 
+            Content="Welcome to the Super Simple Quiz!" 
+            FontWeight="ExtraBold" 
+            FontSize="20" 
+            Grid.Column="1" 
+            Grid.ColumnSpan="6" 
+            Grid.Row="2" 
+            HorizontalAlignment="Center" />
 
-        <Label Content="History" Grid.Column="2" Grid.Row="6" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-        <CheckBox x:Name="CheckBoxHistory" Grid.Column="3" Grid.Row="6" VerticalAlignment="Center"/>
+        <Label 
+            Content="Choose your catagories" 
+            FontWeight="Bold" 
+            FontSize="17" 
+            Grid.Column="3" 
+            Grid.ColumnSpan="2"
+            Grid.Row="4" />
 
-        <Label Content="Science" Grid.Column="2" Grid.Row="8" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-        <CheckBox x:Name="CheckBoxScience" Grid.Column="3" Grid.Row="8" VerticalAlignment="Center"/>
+        <Label 
+            Content="History" 
+            Grid.Column="3" 
+            Grid.Row="6" 
+            Margin="20,0,0,0"
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Center"/>
+        <CheckBox 
+            x:Name="CheckBoxHistory" 
+            Grid.Column="3" 
+            Grid.Row="6" 
+            VerticalAlignment="Center"/>
 
-        <Label Content="Literature" Grid.Column="2" Grid.Row="10" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-        <CheckBox x:Name="CheckBoxLiterature" Grid.Column="3" Grid.Row="10" VerticalAlignment="Center"/>
+        <Label 
+            Content="Science" 
+            Grid.Column="3" 
+            Grid.Row="8" 
+            Margin="20,0,0,0"
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Center"/>
+        <CheckBox 
+            x:Name="CheckBoxScience" 
+            Grid.Column="3" 
+            Grid.Row="8" 
+            VerticalAlignment="Center"/>
 
-        <Label Content="Geography" Grid.Column="2" Grid.Row="12" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-        <CheckBox x:Name="CheckBoxGeography" Grid.Column="3" Grid.Row="12" VerticalAlignment="Center"/>
+        <Label 
+            Content="Literature" 
+            Grid.Column="3" 
+            Grid.Row="10" 
+            Margin="20,0,0,0"
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Center"/>
+        <CheckBox 
+            x:Name="CheckBoxLiterature" 
+            Grid.Column="3" 
+            Grid.Row="10" 
+            VerticalAlignment="Center"/>
 
-        <Label Content="Mathemathics" Grid.Column="2" Grid.Row="14" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-        <CheckBox x:Name="CheckBoxMathematics" Grid.Column="3" Grid.Row="14" VerticalAlignment="Center"/>
-        
-        <Label Content="Misc" Grid.Column="2" Grid.Row="16" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-        <CheckBox x:Name="CheckBoxMisc" Grid.Column="3" Grid.Row="16" VerticalAlignment="Center"/>
+        <Label 
+            Content="Geography" 
+            Grid.Column="3" 
+            Grid.Row="12" 
+            Margin="20,0,0,0"
+            HorizontalAlignment="Left"  
+            VerticalAlignment="Center"/>
+        <CheckBox 
+            x:Name="CheckBoxGeography" 
+            Grid.Column="3" 
+            Grid.Row="12" 
+            VerticalAlignment="Center"/>
 
+        <Label 
+            Content="Mathemathics" 
+            Grid.Column="3" 
+            Grid.Row="14" 
+            Margin="20,0,0,0"
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Center"/>
+        <CheckBox 
+            x:Name="CheckBoxMathematics" 
+            Grid.Column="3" 
+            Grid.Row="14" 
+            VerticalAlignment="Center"/>
 
-        <Image Width="410" Grid.Row="5" Grid.Column="1" />
+        <Label 
+            Content="Misc" 
+            Grid.Column="3" 
+            Grid.Row="16" 
+            Margin="20,0,0,0"
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Center"/>
+        <CheckBox 
+            x:Name="CheckBoxMisc" 
+            Grid.Column="3" 
+            Grid.Row="16" 
+            VerticalAlignment="Center"/>
+
+        <Image 
+            Width="290" 
+            Grid.Column="1" 
+            Grid.Row="2" 
+            Grid.RowSpan="20" 
+            HorizontalAlignment="Left" 
+            Source="/Images/QuizMascot.png" />
 
     </Grid>
 </Window>

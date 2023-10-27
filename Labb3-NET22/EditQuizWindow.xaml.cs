@@ -21,8 +21,11 @@ namespace Labb3_NET22
     /// </summary>
     public partial class EditQuizWindow : Window
     {
+
         Quiz editQuizList = new Quiz();
-        int[] answerArray = new int[] {1,2,3,4};
+        int[] answerArray = new int[] { 1, 2, 3, 4 };
+
+        //Constructor --------------------------------------------------------------------
         public EditQuizWindow()
         {
             InitializeComponent();
@@ -32,6 +35,8 @@ namespace Labb3_NET22
 
         }
 
+        //Methods -------------------------------------------------------------------------
+        //Adds a new question to the IEnumerable list of question, with or without a image.
         private void ButtonAddQuestion_Click(object sender, RoutedEventArgs e)
         {
             if (ComboBoxRightAnswerInt.SelectedItem is int rightAnswer && ComboBoxCatagoryChoices.Text != null && TextBoxStatement.Text != null && TextBoxAnswer1.Text != null && TextBoxAnswer2.Text != null && TextBoxAnswer3.Text != null && TextBoxAnswer4.Text != null)
@@ -42,21 +47,22 @@ namespace Labb3_NET22
                     editQuizList = new();
                     ListOfQuestions.ItemsSource = editQuizList.Questions;
 
-                } else
+                }
+                else
                 {
-                    editQuizList.AddQuestion(ComboBoxCatagoryChoices.Text, TextBoxStatement.Text, rightAnswer, TextBoxImage.Text , TextBoxAnswer1.Text, TextBoxAnswer2.Text, TextBoxAnswer3.Text, TextBoxAnswer4.Text);
+                    editQuizList.AddQuestion(ComboBoxCatagoryChoices.Text, TextBoxStatement.Text, rightAnswer, TextBoxImage.Text, TextBoxAnswer1.Text, TextBoxAnswer2.Text, TextBoxAnswer3.Text, TextBoxAnswer4.Text);
                     editQuizList = new();
                     ListOfQuestions.ItemsSource = editQuizList.Questions;
 
                 }
-
-            } else
+            }
+            else
             {
                 MessageBox.Show("Please select a right answer.");
-            } 
+            }
         }
-            
 
+        //instantiate a new mainwindow and switches to it.
         private void ButtonBack_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
@@ -64,6 +70,7 @@ namespace Labb3_NET22
             mainWindow.Show();
         }
 
+        //Sends the index of a question to be removed from the IEnumerable list of questions.
         private void ButtonRemoveQuestion_Click(object sender, RoutedEventArgs e)
         {
             editQuizList.RemoveQuestion(ListOfQuestions.SelectedIndex);
@@ -71,12 +78,12 @@ namespace Labb3_NET22
             ListOfQuestions.ItemsSource = editQuizList.Questions;
         }
 
+        //Overwrites the question, in question, by sending the corrected info and index.
         private void ButtonEditQuestion_Click(object sender, RoutedEventArgs e)
         {
             if (ComboBoxRightAnswerInt.SelectedItem is int rightAnswer)
             {
-                editQuizList.EditQuestion(ListOfQuestions.SelectedIndex ,ComboBoxCatagoryChoices.Text, TextBoxStatement.Text, rightAnswer, TextBoxImage.Text, TextBoxAnswer1.Text, TextBoxAnswer2.Text, TextBoxAnswer3.Text, TextBoxAnswer4.Text);
-
+                editQuizList.EditQuestion(ListOfQuestions.SelectedIndex, ComboBoxCatagoryChoices.Text, TextBoxStatement.Text, rightAnswer, TextBoxImage.Text, TextBoxAnswer1.Text, TextBoxAnswer2.Text, TextBoxAnswer3.Text, TextBoxAnswer4.Text);
                 editQuizList = new();
                 ListOfQuestions.ItemsSource = editQuizList.Questions;
             }
@@ -86,6 +93,7 @@ namespace Labb3_NET22
             }
         }
 
+        //A Method that adds the information of a question from the list on selection
         private void ListOfQuestions_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
@@ -105,6 +113,7 @@ namespace Labb3_NET22
 
         }
 
+        //Clears all textboxes, to make it easier to type in a new question.
         private void ButtonClear_Click(object sender, RoutedEventArgs e)
         {
             TextBoxStatement.Text = string.Empty;

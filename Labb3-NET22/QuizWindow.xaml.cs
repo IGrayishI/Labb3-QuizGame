@@ -20,17 +20,20 @@ namespace Labb3_NET22
     /// </summary>
     public partial class QuizWindow : Window
     {
-        int userChoice;
-        int amountOfGuesses = 0;
-        int correctGuesses = 0;
-            Question? currentQuiz;
-            Quiz quizClass = new Quiz();
+        //Fields
+        private int _userChoice;
+        private int _amountOfGuesses = 0;
+        private int _correctGuesses = 0;
+
+        Question? currentQuiz;
+        Quiz quizClass = new Quiz();
         List<Question> questionList = new List<Question>();
 
+        //Constructor --------------------------------------------------------------------------------------------
         public QuizWindow(List<string> listOfCatagories)
         {
             List<Question> allQuestions = quizClass.Questions.ToList();
-            
+
             foreach (string catagory in listOfCatagories)
             {
                 foreach (Question question in allQuestions)
@@ -43,69 +46,52 @@ namespace Labb3_NET22
             }
 
             InitializeComponent();
-            LabelProcentageCorrectAnswers.Content = $"{amountOfGuesses + 1} / {questionList.Count}";
+            LabelQuestionNumeral.Content = $"{_amountOfGuesses + 1} / {questionList.Count}";
             NextQuesion();
 
         }
 
+        //Methods ------------------------------------------------------------------------------------------------
+        //Sets the users choice to 1, checks if its right and then adds a new question.
         private void OptionA_Click(object sender, RoutedEventArgs e)
         {
-            userChoice = 1;
+            _userChoice = 1;
             SubmitAnswer();
         }
 
+        //Sets the users choice to 2, checks if its right and then adds a new question.
         private void OptionB_Click(object sender, RoutedEventArgs e)
         {
-            userChoice = 2;
+            _userChoice = 2;
             SubmitAnswer();
         }
 
+        //Sets the users choice to 3, checks if its right and then adds a new question.
         private void OptionC_Click(object sender, RoutedEventArgs e)
         {
-            userChoice = 3;
+            _userChoice = 3;
             SubmitAnswer();
         }
 
+        //Sets the users choice to 4, checks if its right and then adds a new question.
         private void OptionD_Click(object sender, RoutedEventArgs e)
         {
-            userChoice = 4;
+            _userChoice = 4;
             SubmitAnswer();
         }
 
-        private void SubmitButton_Click(object sender, RoutedEventArgs e)
-        {
-            //if (userChoice != 0)
-            //{
-                
-            //    if (userChoice == currentQuiz.CorrectAnswer)
-            //    {
-            //        ProgressBarAmountOfQuestions.Value += 100 / questionList.Count;
-            //        NextQuesion();
-            //        MessageBox.Show("Correct!");
-                    
-            //    } else
-            //    {
-            //        ProgressBarAmountOfQuestions.Value += 100 / questionList.Count;
-            //        NextQuesion();
-            //        MessageBox.Show("Not Correct.");
-            //    }
-            //} else
-            //{
-            //    MessageBox.Show("Please select an answer");
-            //}
-        }
-
+        //A method, that checks if the answer given is correct.
+        //If all questions have been answered, it sends the user back to the main window.
         private void SubmitAnswer()
         {
-            
-            if (userChoice != 0)
+            if (_userChoice != 0)
             {
-                LabelProcentageCorrectAnswers.Content = $"{amountOfGuesses +1} / {questionList.Count}";
-                amountOfGuesses++;
-                
-                if (userChoice == currentQuiz.CorrectAnswer)
+                LabelQuestionNumeral.Content = $"{_amountOfGuesses + 1} / {questionList.Count}";
+                _amountOfGuesses++;
+
+                if (_userChoice == currentQuiz.CorrectAnswer)
                 {
-                    correctGuesses++;
+                    _correctGuesses++;
                     MessageBox.Show("Correct!");
 
                     ProgressBarAmountOfQuestions.Value += 100 / questionList.Count;
@@ -119,17 +105,18 @@ namespace Labb3_NET22
             {
                 MessageBox.Show("Please select an answer");
             }
-            
-            if (amountOfGuesses == questionList.Count) { Back(); }
+            if (_amountOfGuesses == questionList.Count) { Back(); }
             NextQuesion();
-            
+
         }
 
+        //See NextQuestion
         private void ButtonNextQuestion_Click(object sender, RoutedEventArgs e)
         {
             NextQuesion();
         }
 
+        //Gets a new question, sets the labels with the content and adds a picture if any are given.
         private void NextQuesion()
         {
             currentQuiz = quizClass.GetRandomQuestion(questionList);
@@ -138,23 +125,25 @@ namespace Labb3_NET22
             LabelOptionB.Content = currentQuiz.Answers[1];
             LabelOptionC.Content = currentQuiz.Answers[2];
             LabelOptionD.Content = currentQuiz.Answers[3];
-            userChoice = 0;
-            string? imagePath = currentQuiz.ImagePath; // The path to your new image
-            if (imagePath != "null" && imagePath != null)
+            _userChoice = 0;
+
+            string? imagePath = currentQuiz.ImagePath;
+            Uri imageUri = new Uri(imagePath, UriKind.RelativeOrAbsolute);
+
+            if (imagePath.StartsWith("http://") || imagePath.StartsWith("https://"))
             {
-                Uri imageUri = new Uri(imagePath, UriKind.RelativeOrAbsolute);
                 ImageQuestion.Source = new BitmapImage(imageUri);
                 return;
             }
-
-            
         }
 
+        //See Back
         private void ButtonBack_Click(object sender, RoutedEventArgs e)
         {
             Back();
         }
 
+        //Creates a new mainWindow, and switches to it.
         private void Back()
         {
             MainWindow mainWindow = new MainWindow();

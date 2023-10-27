@@ -71,7 +71,7 @@ public class Quiz
         }
         throw new NotImplementedException("Question need to be instantiated and added to list of questions here!");
     }
-    public void AddQuestion(string catagory, string statement, int correctAnswer, string imagePath = "null", params string[] answers)
+    public async void AddQuestion(string catagory, string statement, int correctAnswer, string imagePath = "null", params string[] answers)
     {
         Question newQuestion = new Question(catagory, statement, correctAnswer, imagePath, answers);
         Quiz editQuizList = new Quiz();
@@ -81,7 +81,7 @@ public class Quiz
             List<Question> _questions = editQuizList.Questions.ToList();
             _questions.Add(newQuestion);
 
-            JSON_Function.SaveJSONList(_questions);
+           await JSON_Function.SaveJSONList(_questions);
         }
         else
         {

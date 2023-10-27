@@ -40,7 +40,7 @@ namespace Labb3_NET22.DataModels
             new Question("Mathematics", "What is the value of Pi (π) to two decimal places?", 1, "null", new string[] { "3.14", "3.141", "3.1416", "3.14159" }),
             new Question("Mathematics", "What is the square of 9?", 2, "null", new string[] { "64", "81", "49", "100" }),
             new Question("Mathematics", "What is the result of 5 multiplied by 7?", 2, "null", new string[] { "30", "35", "42", "25" }),
-            new Question("Mathematics", "What is the square root of 16?", 1, "null", new string[] { "2", "4", "8", "16" }),
+            new Question("Mathematics", "What is the square root of 16?", 2, "null", new string[] { "2", "4", "8", "16" }),
 
         };
     }
