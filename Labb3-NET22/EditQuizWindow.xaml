@@ -6,45 +6,46 @@
         xmlns:local="clr-namespace:Labb3_NET22"
         mc:Ignorable="d"
         Title="EditQuizWindow" Height="460" Width="860">
-    <Grid>
+    <Grid Background="LightGray">
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="10"/>
-            <ColumnDefinition Width="152"/>
+            <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="10"/>
-            <ColumnDefinition Width="170"/>
+            <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="10"/>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="20" />
-            <RowDefinition Height="auto"    x:Name="One"/>
-            <RowDefinition Height="5"       x:Name="Two"/>
-            <RowDefinition Height="auto"    x:Name="Three"/>
-            <RowDefinition Height="5"       x:Name="Four"/>
-            <RowDefinition Height="auto"    x:Name="Five"/>
-            <RowDefinition Height="5"       x:Name="Six"/>
-            <RowDefinition Height="auto"    x:Name="Seven"/>
-            <RowDefinition Height="5"       x:Name="Eight"/>
-            <RowDefinition Height="auto"    x:Name="Nine"/>
-            <RowDefinition Height="5"       x:Name="Ten"/>
-            <RowDefinition Height="auto"    x:Name="Eleven"/>
-            <RowDefinition Height="5"       x:Name="Twelve"/>
-            <RowDefinition Height="auto"    x:Name="Thirteen"/>
-            <RowDefinition Height="5"       x:Name="Forteen"/>
-            <RowDefinition Height="auto"    x:Name="Fifteen"/>
-            <RowDefinition Height="5"       x:Name="Sixteen"/>
-            <RowDefinition Height="auto"    x:Name="Seventeen"/>
-            <RowDefinition Height="*"       x:Name="Eighteen"/>
-            <RowDefinition Height="20"      x:Name="Nineteen"/>
+            <RowDefinition Height="20"     />
+            <RowDefinition Height="auto"   />
+            <RowDefinition Height="5"      />
+            <RowDefinition Height="auto"   />
+            <RowDefinition Height="5"      />
+            <RowDefinition Height="auto"   />
+            <RowDefinition Height="5"      />
+            <RowDefinition Height="auto"   />
+            <RowDefinition Height="5"      />
+            <RowDefinition Height="auto"   />
+            <RowDefinition Height="5"      />
+            <RowDefinition Height="auto"   />
+            <RowDefinition Height="5"      />
+            <RowDefinition Height="auto"   />
+            <RowDefinition Height="5"      />
+            <RowDefinition Height="auto"   />
+            <RowDefinition Height="5"      />
+            <RowDefinition Height="auto"   />
+            <RowDefinition Height="*"      />
+            <RowDefinition Height="20"     />
         </Grid.RowDefinitions>
 
         <Label 
-            Grid.Column="1" 
+            Grid.Column="2" 
             Grid.ColumnSpan="4" 
             Grid.Row="1" 
             Content="Edit Question List" 
@@ -53,28 +54,28 @@
             HorizontalAlignment="Center" />
         <Button 
             x:Name="ButtonAddQuestion"  
-            Grid.Column="1" 
+            Grid.Column="2" 
             Grid.Row="3" 
             Content="Add Question" 
             Click="ButtonAddQuestion_Click" />
         <Button 
             x:Name="ButtonEditQuestion" 
-            Grid.Column="1" 
+            Grid.Column="2" 
             Grid.Row="5" 
             Content="Edit Question" Click="ButtonEditQuestion_Click"/>
         <Button 
             x:Name="ButtonRemoveQuestion" 
-            Grid.Column="1" 
+            Grid.Column="2" 
             Grid.Row="7" 
             Content="Remove Question" Click="ButtonRemoveQuestion_Click"/>
         <Button 
             x:Name="ButtonClear" 
-            Grid.Column="1" 
+            Grid.Column="2" 
             Grid.Row="9" 
             Content="Clear Selection" Click="ButtonClear_Click"/>
         <Button 
             x:Name="ButtonBack"         
-            Grid.Column="1" 
+            Grid.Column="2" 
             Grid.Row="15" 
             VerticalAlignment="Top" 
             Content="Back" 
@@ -84,14 +85,10 @@
             Grid.Column="8" 
             Grid.Row="1" 
             Grid.RowSpan="18" 
-            HorizontalAlignment="Right" 
+            HorizontalAlignment="Left"
             Width="350"  
             x:Name="StackPanelList">
 
-            
-
-
-            
             <ListBox 
                 x:Name="ListOfQuestions" 
                 Height="400"
@@ -101,23 +98,76 @@
             </ListBox>
         </StackPanel>
 
-        <Label      x:Name="LabelStatement" Grid.Column="3" Grid.Row="3" Content="Question" FontWeight="Bold"/>
-        <TextBox    x:Name="TextBoxStatement" Grid.Column="3" Grid.Row="5"/>
+        <Label      
+            x:Name="LabelStatement" 
+            Grid.Column="4"
+            Grid.Row="3"
+            Content="Question"
+            FontWeight="Bold"/>
+        <TextBox    
+            x:Name="TextBoxStatement" 
+            Grid.Column="4" 
+            Grid.Row="5"/>
 
-        <Label      x:Name="LabelAnswers" Grid.Column="5" Grid.Row="3" Content="Answers" FontWeight="Bold"/>
-        <TextBox    x:Name="TextBoxAnswer1" Grid.Column="5" Grid.Row="5"/>
-        <TextBox    x:Name="TextBoxAnswer2" Grid.Column="5" Grid.Row="7"/>
-        <TextBox    x:Name="TextBoxAnswer3" Grid.Column="5" Grid.Row="9"/>
-        <TextBox    x:Name="TextBoxAnswer4" Grid.Column="5" Grid.Row="11"/>
+        <Label      
+            x:Name="LabelAnswers" 
+            Grid.Column="6" 
+            Grid.Row="3" 
+            Content="Answers" 
+            FontWeight="Bold"/>
+        <TextBox    
+            x:Name="TextBoxAnswer1" 
+            Grid.Column="6" 
+            Grid.Row="5"
+            Width="180"/>
+            
+        <TextBox    
+            x:Name="TextBoxAnswer2"
+            Grid.Column="6" 
+            Grid.Row="7"
+            Width="180"/>
+        <TextBox    
+            x:Name="TextBoxAnswer3"
+            Grid.Column="6" 
+            Grid.Row="9"
+            Width="180"/>
+        <TextBox    
+            x:Name="TextBoxAnswer4" 
+            Grid.Column="6" 
+            Grid.Row="11"
+            Width="180"/>
         
-        <Label      Grid.Column="3" Grid.Row="7" Content="Catagory" FontWeight="Bold" />
-        <ComboBox   x:Name="ComboBoxCatagoryChoices" Grid.Column="3" Grid.Row="9"/>
+        <Label      
+            Grid.Column="3" 
+            Grid.Row="8" 
+            Content="Catagory" 
+            FontWeight="Bold" />
+        <ComboBox   
+            x:Name="ComboBoxCatagoryChoices" 
+            Grid.Column="4" 
+            Grid.Row="9"/>
         
-        <Label      Grid.Column="3" Grid.Row="11" Content="Right Answer" FontWeight="Bold" />
-        <ComboBox   x:Name="ComboBoxRightAnswerInt" Grid.Column="3" Grid.Row="13"/>
+        <Label      
+            Grid.Column="4" 
+            Grid.Row="11" 
+            Content="Right Answer" 
+            FontWeight="Bold" />
+        <ComboBox   
+            x:Name="ComboBoxRightAnswerInt" 
+            Grid.Column="4" 
+            Grid.Row="13"/>
 
-        <Label      x:Name="LabelImage" Grid.Column="3" Grid.Row="15" Content="Enter Image URL" FontWeight="Bold"/>
-        <TextBox    x:Name="TextBoxImage" Grid.Column="3" Grid.ColumnSpan="3" Grid.Row="17"/>
+        <Label      
+            x:Name="LabelImage" 
+            Grid.Column="4" 
+            Grid.Row="15" 
+            Content="Enter Image URL" 
+            FontWeight="Bold"/>
+        <TextBox    
+            x:Name="TextBoxImage" 
+            Grid.Column="4" 
+            Grid.ColumnSpan="3" 
+            Grid.Row="17"/>
 
 
 

@@ -11,6 +11,7 @@
   <ItemGroup>
     <None Remove="CatWithShades.jpg" />
     <None Remove="Images\CatWithShades.jpg" />
+    <None Remove="Images\QuizMascot.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,6 +20,9 @@
 
   <ItemGroup>
     <Resource Include="Images\CatWithShades.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\QuizMascot.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

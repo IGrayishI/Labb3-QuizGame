@@ -10,15 +10,15 @@
     <Grid Background="LightGray">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="260"/>
             <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="130"/>
-            <ColumnDefinition Width="130"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
-            <RowDefinition Height="175"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="20"/>
             <RowDefinition Height="auto"/>
@@ -46,7 +46,7 @@
             Content="Start Quiz" 
             Width="90" 
             Height="40" 
-            Click="StartQuiz_Click"/>
+            Click="StartQuiz_Click" />
         <Button 
             x:Name="EditQuiz" 
             Grid.Column="1" 
@@ -163,10 +163,12 @@
         <Image 
             Width="290" 
             Grid.Column="1" 
-            Grid.Row="2" 
-            Grid.RowSpan="20" 
-            HorizontalAlignment="Left" 
-            Source="/Images/QuizMascot.png" />
+            Grid.ColumnSpan="5"
+            Grid.Row="1" 
+            Grid.RowSpan="1" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Top"
+            Source="\Images\QuizMascot.png" />
 
     </Grid>
 </Window>

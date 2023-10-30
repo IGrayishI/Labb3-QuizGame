@@ -31,17 +31,12 @@ namespace Labb3_NET22
             InitializeComponent();
         }
 
-        /// <summary>
-        /// Generates the Appdata Folder on runtime
-        /// </summary>
-
         //Methods ------------------------------------------------------------------------------------------
         //Checks if any checkboxes are checked, and sends the catagories to create a quiz in the QuizWindow
         //If not, promps the user to add catagories to the quiz
         private void StartQuiz_Click(object sender, RoutedEventArgs e)
         {
             List<string> listOfCatagories = new List<string>();
-
 
             if (CheckBoxHistory.IsChecked == true)
             {

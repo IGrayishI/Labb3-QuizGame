@@ -46,7 +46,6 @@ public class Quiz
             } else if (usedQuestions.Count() == listOfQuestions.Count())
             {
                 usedQuestions.Clear();
-                MessageBox.Show("That was all questions");
             }
         }
         throw new NotImplementedException("A random Question needs to be returned here!");

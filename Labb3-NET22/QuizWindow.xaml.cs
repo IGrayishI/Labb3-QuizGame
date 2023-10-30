@@ -21,6 +21,7 @@ namespace Labb3_NET22
     public partial class QuizWindow : Window
     {
         //Fields
+        double _correctAnswerProcent;
         private int _userChoice;
         private int _amountOfGuesses = 0;
         private int _correctGuesses = 0;
@@ -94,7 +95,9 @@ namespace Labb3_NET22
                     _correctGuesses++;
                     MessageBox.Show("Correct!");
 
+                    _correctAnswerProcent += 100 / questionList.Count; 
                     ProgressBarAmountOfQuestions.Value += 100 / questionList.Count;
+                    LabelProcentageCorrect.Content = $"{_correctAnswerProcent}%";
                 }
                 else
                 {
@@ -105,7 +108,7 @@ namespace Labb3_NET22
             {
                 MessageBox.Show("Please select an answer");
             }
-            if (_amountOfGuesses == questionList.Count) { Back(); }
+            if (_amountOfGuesses == questionList.Count) { MessageBox.Show($"Thats all the questions! Your score is {_correctAnswerProcent}%."); Back(); }
             NextQuesion();
 
         }
