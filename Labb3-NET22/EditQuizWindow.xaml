@@ -78,7 +78,7 @@
             Grid.Column="2" 
             Grid.Row="15" 
             VerticalAlignment="Top" 
-            Content="Back" 
+            Content="Back to Menu" 
             Height="30" 
             Grid.RowSpan="2" Click="ButtonBack_Click" />
         <StackPanel 
