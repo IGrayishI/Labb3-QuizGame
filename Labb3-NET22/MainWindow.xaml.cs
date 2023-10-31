@@ -32,8 +32,11 @@ namespace Labb3_NET22
         }
 
         //Methods ------------------------------------------------------------------------------------------
-        //Checks if any checkboxes are checked, and sends the catagories to create a quiz in the QuizWindow
-        //If not, promps the user to add catagories to the quiz
+        /// <summary>
+        /// Checks if any checkboxes are checked, and sends the catagories to create a quiz in the QuizWindow. If not, promps the user to add catagories to the quiz
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void StartQuiz_Click(object sender, RoutedEventArgs e)
         {
             List<string> listOfCatagories = new List<string>();
@@ -75,7 +78,11 @@ namespace Labb3_NET22
             }
         }
 
-        //Creates a new EditQuizWindow and switches to it.
+        /// <summary>
+        /// Creates a new EditQuizWindow and switches to it.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void EditQuiz_Click(object sender, RoutedEventArgs e)
         {
             EditQuizWindow editWindow = new EditQuizWindow();
@@ -83,7 +90,11 @@ namespace Labb3_NET22
             editWindow.Show();
         }
 
-        //Closes mainWindow, which ends the program.
+        /// <summary>
+        /// Closes mainWindow, which ends the program.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void QuitQuiz_Click(object sender, RoutedEventArgs e)
         {
             this.Close();

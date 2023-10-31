@@ -24,7 +24,12 @@ public class Quiz
     {
         _questions = JSON_Function.LoadJSONList();
     }
-
+    /// <summary>
+    /// Gets a random question. Not optimal, but works.
+    /// </summary>
+    /// <param name="listOfQuestions"></param>
+    /// <returns></returns>
+    /// <exception cref="NotImplementedException"></exception>
     public Question GetRandomQuestion(List<Question> listOfQuestions)
     {
         bool isRunning = true;
@@ -50,7 +55,14 @@ public class Quiz
         }
         throw new NotImplementedException("A random Question needs to be returned here!");
     }
-
+    /// <summary>
+    /// Adds question to the list and overwrites the list in JSON. Without Image
+    /// </summary>
+    /// <param name="catagory"></param>
+    /// <param name="statement"></param>
+    /// <param name="correctAnswer"></param>
+    /// <param name="answers"></param>
+    /// <exception cref="NotImplementedException"></exception>
     public void AddQuestion(string catagory, string statement, int correctAnswer, params string[] answers)
     {
         Question newQuestion = new Question(catagory, statement, correctAnswer, "null", answers);
@@ -70,6 +82,14 @@ public class Quiz
         }
         throw new NotImplementedException("Question need to be instantiated and added to list of questions here!");
     }
+    /// <summary>
+    /// Adds question to the list and overwrites the list in JSON. With Image.
+    /// </summary>
+    /// <param name="catagory"></param>
+    /// <param name="statement"></param>
+    /// <param name="correctAnswer"></param>
+    /// <param name="imagePath"></param>
+    /// <param name="answers"></param>
     public async void AddQuestion(string catagory, string statement, int correctAnswer, string imagePath = "null", params string[] answers)
     {
         Question newQuestion = new Question(catagory, statement, correctAnswer, imagePath, answers);
@@ -87,7 +107,11 @@ public class Quiz
             MessageBox.Show("Save Error");
         }
     }
-
+    /// <summary>
+    /// Removes Question from the list and overwrites the list in JSON.
+    /// </summary>
+    /// <param name="index"></param>
+    /// <exception cref="NotImplementedException"></exception>
     public void RemoveQuestion(int index)
     {
         Quiz editQuizList = new Quiz();
@@ -107,7 +131,15 @@ public class Quiz
         }
         throw new NotImplementedException("Question at requested index need to be removed here!");
     }
-
+    /// <summary>
+    /// Changes the values of a selected question and overwrites the list in JSON.
+    /// </summary>
+    /// <param name="index"></param>
+    /// <param name="catagory"></param>
+    /// <param name="statement"></param>
+    /// <param name="correctAnswer"></param>
+    /// <param name="imagePath"></param>
+    /// <param name="answers"></param>
     public void EditQuestion(int index, string catagory, string statement, int correctAnswer, string imagePath = "null", params string[] answers)
     {
         Question newQuestion = new Question(catagory, statement, correctAnswer, imagePath, answers);

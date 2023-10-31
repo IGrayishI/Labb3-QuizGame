@@ -53,36 +53,53 @@ namespace Labb3_NET22
         }
 
         //Methods ------------------------------------------------------------------------------------------------
-        //Sets the users choice to 1, checks if its right and then adds a new question.
+        /// <summary>
+        /// Sets the users choice to 1, checks if its right and then adds a new question.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OptionA_Click(object sender, RoutedEventArgs e)
         {
             _userChoice = 1;
             SubmitAnswer();
         }
 
-        //Sets the users choice to 2, checks if its right and then adds a new question.
+        /// <summary>
+        /// Sets the users choice to 2, checks if its right and then adds a new question.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OptionB_Click(object sender, RoutedEventArgs e)
         {
             _userChoice = 2;
             SubmitAnswer();
         }
 
-        //Sets the users choice to 3, checks if its right and then adds a new question.
+        /// <summary>
+        /// Sets the users choice to 3, checks if its right and then adds a new question.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OptionC_Click(object sender, RoutedEventArgs e)
         {
             _userChoice = 3;
             SubmitAnswer();
         }
 
-        //Sets the users choice to 4, checks if its right and then adds a new question.
+        /// <summary>
+        /// Sets the users choice to 4, checks if its right and then adds a new question.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OptionD_Click(object sender, RoutedEventArgs e)
         {
             _userChoice = 4;
             SubmitAnswer();
         }
 
-        //A method, that checks if the answer given is correct.
-        //If all questions have been answered, it sends the user back to the main window.
+        /// <summary>
+        /// A method, that checks if the answer given is correct. If all questions have been answered, it sends the user back to the main window.
+        /// </summary>
         private void SubmitAnswer()
         {
             if (_userChoice != 0)
@@ -113,13 +130,19 @@ namespace Labb3_NET22
 
         }
 
-        //See NextQuestion
+        /// <summary>
+        /// Gets a new question, sets the labels with the content and adds a picture if any are given.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonNextQuestion_Click(object sender, RoutedEventArgs e)
         {
             NextQuesion();
         }
 
-        //Gets a new question, sets the labels with the content and adds a picture if any are given.
+        /// <summary>
+        /// Gets a new question, sets the labels with the content and adds a picture if any are given.
+        /// </summary>
         private void NextQuesion()
         {
             currentQuiz = quizClass.GetRandomQuestion(questionList);
@@ -140,13 +163,19 @@ namespace Labb3_NET22
             }
         }
 
-        //See Back
+        /// <summary>
+        /// Creates a new mainWindow, and switches to it.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonBack_Click(object sender, RoutedEventArgs e)
         {
             Back();
         }
 
-        //Creates a new mainWindow, and switches to it.
+        /// <summary>
+        /// Creates a new mainWindow, and switches to it.
+        /// </summary>
         private void Back()
         {
             MainWindow mainWindow = new MainWindow();
