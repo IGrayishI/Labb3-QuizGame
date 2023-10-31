@@ -48,8 +48,8 @@
             Grid.RowSpan="1" 
             HorizontalAlignment="Center"
             Source="/Images/CatWithShades.jpg" 
-            Width="300"
-            Height="250"/>
+            Width="auto"
+            Height="270"/>
 
         <WrapPanel
             Grid.Column="1"
@@ -73,7 +73,7 @@
         <Label 
                 x:Name="LabelOptionA"
                 Content="Option A Text"
-                HorizontalAlignment="Center"
+                HorizontalAlignment="Left"
                 Grid.Column="4"
                 Grid.ColumnSpan="1"
                 Grid.Row="7" Grid.RowSpan="1" />
@@ -132,13 +132,12 @@
             Grid.Column="1" 
             Grid.ColumnSpan="5" 
             Grid.Row="17" 
-            Content="Back" 
+            Content="Back to Menu" 
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
-            Width="50" 
+            Width="100" 
             Height="25"
             Click="ButtonBack_Click" />
-  
         
         <ProgressBar 
             x:Name="ProgressBarAmountOfQuestions"

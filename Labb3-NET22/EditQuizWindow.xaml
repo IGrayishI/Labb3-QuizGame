@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Labb3_NET22"
         mc:Ignorable="d"
-        Title="EditQuizWindow" Height="460" Width="860">
+        Title="EditQuizWindow" Height="480" Width="860">
     <Grid Background="LightGray">
 
         <Grid.ColumnDefinitions>
@@ -14,7 +14,7 @@
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="10"/>
             <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="10"/>
             <ColumnDefinition Width="auto"/>
@@ -107,7 +107,8 @@
         <TextBox    
             x:Name="TextBoxStatement" 
             Grid.Column="4" 
-            Grid.Row="5"/>
+            Grid.Row="5"
+            Width="130"/>
 
         <Label      
             x:Name="LabelAnswers" 
@@ -115,22 +116,38 @@
             Grid.Row="3" 
             Content="Answers" 
             FontWeight="Bold"/>
+        <Label
+            Grid.Column="5"
+            Grid.Row="5"
+            Content="1."/>
         <TextBox    
             x:Name="TextBoxAnswer1" 
             Grid.Column="6" 
             Grid.Row="5"
             Width="180"/>
+        <Label
+            Grid.Column="5"
+            Grid.Row="7"
+            Content="2."/>
             
         <TextBox    
             x:Name="TextBoxAnswer2"
             Grid.Column="6" 
             Grid.Row="7"
             Width="180"/>
+        <Label
+            Grid.Column="5"
+            Grid.Row="9"
+            Content="3."/>
         <TextBox    
             x:Name="TextBoxAnswer3"
             Grid.Column="6" 
             Grid.Row="9"
             Width="180"/>
+        <Label
+            Grid.Column="5"
+            Grid.Row="11"
+            Content="4."/>
         <TextBox    
             x:Name="TextBoxAnswer4" 
             Grid.Column="6" 
@@ -167,7 +184,8 @@
             x:Name="TextBoxImage" 
             Grid.Column="4" 
             Grid.ColumnSpan="3" 
-            Grid.Row="17"/>
+            Grid.Row="17"
+            Width="320"/>
 
 
 
